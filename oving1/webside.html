@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enkel Webside</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<div class="grid-container">
+    <header class="header">
+        <h1>Goofy fan nr 1</h1>
+        <img src="resources/goofy-logo.png" alt="Logo for Enkel Webside" class="logo-img">
+        <p class="slogan" id="slogan">For goofs only</p>
+        <button id="sloganButton" class="button">Skjul/Vis Slagord</button>
+    </header>
+    
+    <div class="main-menu">
+        <nav aria-label="Hovednavigasjon" class="menu">
+            <ul>
+                <li><a href="index.php">Hjem</a></li>
+                <li><a href="about.php">Om Oss</a></li>
+                <li><a href="services.php">Våre Tjenester</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <main>
+        <section class="intro">
+            <h2>Velkommen til min webside</h2>
+            <p>Her er en webside som jeg har laget i forbindelse med faget fullstack.</p>
+            <p>Denne websiden er laget med HTML og CSS.</p>
+            <p>Denne websiden er laget av <a href="om-meg.html">meg</a>.</p>
+        </section>
+    
+        <div class="goofy-section">
+            <button id="showGoofyWords" class="button">Vis Goofy Ord</button>
+            <div id="goofyWords">
+                <!-- Her vises de tilfeldige "goofye" ordene -->
+            </div>
+        </div>
+    
+        <div class="image-container">
+            <img src="resources/goofy-dall-e.png" alt="Dall-E Shenanigans" class="image">
+            <img src="resources/goofy.png" alt="Goofy" class="image">
+            <img src="resources/goofy-max.jpg" alt="Goofy og Max" class="image">
+            <img src="resources/Goofy-min.png" alt="Goofy mini" class="image">
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; <span id="year">2024</span> Goofys Nettsted. Alle rettigheter reservert.</p>
+        <button id="increaseYear" class="button">Øk Årstall</button>       
+        <nav aria-label="Navigasjon i footer" class="menu">
+            <ul>
+                <li><a href="privacy-policy.html">Personvernerklæring</a></li>
+                <li><a href="terms-of-use.html">Brukervilkår</a></li>
+                <li><a href="contact.html">Kontakt Oss</a></li>
+            </ul>
+        </nav>
+        <img src="/resources/goofy-logo.png" alt="Logo for enkel webside" class="logo-img">
+    </footer>
+</div>
+<script src="javascript.js"></script>
+</body>
+</html>

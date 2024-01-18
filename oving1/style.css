@@ -1,0 +1,135 @@
+/* Reset default browser styles */
+body, h1, h2, p, ul, li, a {
+  margin: 0;
+  padding: 0;
+}
+
+/* Generell styling for hele siden */
+body {
+  font-family: "Comic Sans MS", "Comic Sans", cursive, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Grid container */
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto auto;
+  gap: 10px;
+}
+
+/* Styling for header */
+.header {
+  background-color: gray;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+/* Styling for slagord */
+.slogan {
+  visibility: visible; /* Sett opprinnelig synlighet til synlig */
+}
+
+
+/* Styling for logo */
+.logo-img {
+  max-width: 50px; /* Juster størrelsen etter behov */
+  height: auto;
+}
+
+/* Styling for meny */
+.main-menu {
+  text-align: center;
+  padding: 10px;
+}
+
+.menu ul {
+  list-style-type: none; /* Remove bullet points */
+  padding: 0;
+}
+
+.menu li {
+  display: inline;
+  margin: 0 10px;
+}
+
+.menu a {
+  color: green;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+/* Styling for innholdsblokker */
+.intro, .gallery {
+  padding: 20px;
+  text-align: center;
+}
+
+/* Styling for bilder */
+.image {
+  max-width: 100%; /* Juster størrelsen etter behov */
+  height: auto;
+}
+
+/* Styling for footer */
+.footer {
+  background-color: gray;
+  color: white;
+  text-align: center;
+  padding: 10px;
+}
+
+/* Styling for knapper */
+.button {
+  background-color: green;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+/* Styling for å gjøre knappene tydelige */
+.button:hover {
+  background-color: darkgreen;
+}
+
+/* Styling for main-seksjonen */
+main {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Del i to kolonner */
+  grid-gap: 20px; /* Legg til mellomrom mellom kolonnene */
+}
+
+/* Styling for intro-seksjonen */
+.intro {
+  background-color: lightgray; /* Legg til bakgrunnsfarge */
+  padding: 20px;
+}
+
+/* Styling for "goofy" seksjonen */
+.goofy-section {
+  background-color: lightblue; /* Legg til bakgrunnsfarge */
+  padding: 20px;
+  text-align: center;
+}
+
+/* Styling for bildene */
+.image-container {
+  display: flex;
+  justify-content: space-between; /* Jevnt fordelt mellom bildene */
+  align-items: center; /* Sentrer bildene vertikalt */
+}
+
+.image {
+  max-width: 200px; /* Juster størrelsen etter behov */
+  height: auto;
+  margin: 0 auto; /* Sentrer bildene horisontalt */
+}
+
+
+
