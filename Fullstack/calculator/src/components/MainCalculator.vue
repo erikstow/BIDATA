@@ -1,5 +1,6 @@
 <template>
   <div class="calculator">
+
     <!-- Display -->
     <CalculatorDisplay :value="currentValue || '0'" />
 
@@ -31,7 +32,7 @@
       <CalculatorButton label="=" class="button equals" @click="calculate" />
     </div>
 
-    <!-- Beregningslogg -->
+    <!-- Logg -->
     <CalculationLog :logEntries="logEntries" />
   </div>
 </template>
@@ -80,7 +81,7 @@ export default {
       this.operator = op;
       this.previousValue = this.currentValue;
       this.operatorClicked = true;
-      console.log('Operator set to:', this.operator); // Legg til for feilsøking
+      console.log('Operator set to:', this.operator); //for feilsøking
     },
     calculate() {
       if (this.previousValue === null || this.operatorClicked || this.operator === null) {
@@ -91,7 +92,7 @@ export default {
       const previous = parseFloat(this.previousValue);
       let result = 0;
 
-      // Lagre operatøren for loggoppføringen før den tilbakestilles
+      // Lagrer operatøren for loggoppføringen før den tilbakestilles
       const operatorForLog = this.operator;
 
       switch (this.operator) {
@@ -115,13 +116,13 @@ export default {
           return;
       }
 
-      // Bruk operatorForLog for å inkludere operatøren i loggoppføringen
+      // inkluderer operatøren i loggoppføringen
       this.addLogEntry(`${previous} ${operatorForLog} ${current} = ${result}`);
 
-      // Oppdater tilstand etter at loggoppføringen er lagt til
+      // Oppdater tilstand etter at loggoppføringen
       this.currentValue = String(result);
       this.previousValue = null;
-      this.operator = null; // Tilbakestill operatøren her
+      this.operator = null; 
       this.operatorClicked = false;
     },
 
@@ -136,7 +137,7 @@ export default {
       this.currentValue = parts[parts.length - 1];
     },
     addLogEntry(entry) {
-      console.log('Adding log entry:', entry); // Legg til for feilsøking
+      console.log('Adding log entry:', entry); // feilsøking
       this.logEntries.push(entry);
     },
   }
@@ -157,7 +158,7 @@ export default {
 .keypad {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(5, 1fr); /* Fem rader for å inkludere den tomme knappen og '='-knappen */
+  grid-template-rows: repeat(5, 1fr); 
   gap: 10px;
 }
 
@@ -181,8 +182,7 @@ export default {
 
 .empty {
   background-color: transparent;
-  border: none; /* Tom knapp uten synlig grense */
+  border: none; 
 }
 
-/* Tilpass ytterligere stilinnstillinger etter behov */
 </style>

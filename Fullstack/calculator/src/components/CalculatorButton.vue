@@ -19,9 +19,9 @@ export default {
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 60px; /* Juster etter behov */
-  background-color: #f0f0f0; /* Lysegrå som standard bakgrunnsfarge */
-  color: #333; /* Mørkegrå tekstfarge */
+  height: 60px; 
+  background-color: #f0f0f0; 
+  color: #333; 
   border-radius: 5px;
   font-size: 1.5rem;
   cursor: pointer;
@@ -29,6 +29,6 @@ export default {
 }
 
 .button:hover {
-  background-color: #e0e0e0; /* Litt mørkere ved hover */
+  background-color: #e0e0e0; 
 }
 </style>
