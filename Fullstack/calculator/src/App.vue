@@ -11,7 +11,7 @@ export default {
 </script>
 
 <style>
-/* Global styles */
+
 html, body {
   margin: 0;
   padding: 0;
@@ -28,7 +28,7 @@ html, body {
 
 @media (max-width: 600px) {
   .calculator {
-    width: 90%; /* Gjør kalkulatoren mindre på små skjermer */
+    width: 90%; 
   }
 }
 
