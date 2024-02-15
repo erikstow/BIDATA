@@ -12,7 +12,6 @@
 class Workers {
 
 // workers.h (Inside the Workers class definition)
-
 private:
     std::vector<std::thread> threads;
     std::queue<std::function<void()>> tasks;
