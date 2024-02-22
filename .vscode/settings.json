@@ -2,5 +2,7 @@
   "files.associations": {
     "iostream": "cpp",
     "__mutex_base": "cpp"
-  }
+  },
+  "java.compile.nullAnalysis.mode": "automatic",
+  "java.configuration.updateBuildConfiguration": "interactive"
 }
