@@ -84,48 +84,33 @@ export default {
       console.log('Operator set to:', this.operator); //for feilsøking
     },
     calculate() {
-      if (this.previousValue === null || this.operatorClicked || this.operator === null) {
-        console.log('Calculation skipped due to missing operator or values');
-        return;
-      }
-      const current = parseFloat(this.currentValue);
-      const previous = parseFloat(this.previousValue);
-      let result = 0;
-
-      // Lagrer operatøren for loggoppføringen før den tilbakestilles
-      const operatorForLog = this.operator;
-
-      switch (this.operator) {
-        case '+':
-          result = previous + current;
-          break;
-        case '-':
-          result = previous - current;
-          break;
-        case '*':
-          result = previous * current;
-          break;
-        case '/':
-          if (current === 0) {
-            alert("Can't divide by 0.");
-            return;
-          }
-          result = previous / current;
-          break;
-        default:
-          return;
-      }
-
-      // inkluderer operatøren i loggoppføringen
-      this.addLogEntry(`${previous} ${operatorForLog} ${current} = ${result}`);
-
-      // Oppdater tilstand etter at loggoppføringen
-      this.currentValue = String(result);
-      this.previousValue = null;
-      this.operator = null; 
-      this.operatorClicked = false;
-    },
-
+  // Construct the expression string
+  const expression = `${this.previousValue} ${this.operator} ${this.currentValue}`;
+  
+  // Send the expression to the backend for calculation
+  fetch('http://localhost:8081/api/calculate', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ expression })
+  })
+  .then(response => {
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+    return response.json();
+  })
+  .then(data => {
+    this.currentValue = String(data.result);
+    this.addLogEntry(`${this.previousValue} ${this.operator} ${this.currentValue} = ${data.result}`);
+    this.previousValue = null; // Clear the previous value
+    this.operator = null; // Clear the operator
+    this.operatorClicked = false; // Reset operator clicked state
+  })
+  .catch(error => {
+    console.error('Error during calculation:', error);
+    alert('There was an error processing your request');
+  });
+},
     deleteLast() {
       this.currentValue = this.currentValue.slice(0, -1);
     },
