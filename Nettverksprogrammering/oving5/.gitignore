@@ -1,0 +1,27 @@
+# Node.js / NPM-relaterte
+node_modules/
+npm-debug.log
+package-lock.json
+
+# Midlertidige filer
+*.tmp
+*.swp
+*.swo
+.tmp*
+*.sublime-workspace
+
+# IDE / Editor spesifikke filer
+.vscode/
+.idea/
+*.sublime-project
+
+# Byggte output-filer
+/dist
+/build
+
+# Systemfiler
+.DS_Store
+Thumbs.db
+
+# Docker volumer
+.docker_volumes/

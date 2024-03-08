@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Kompiler og Kjør C++ Kode</title>
+</head>
+<body>
+    <textarea id="code" rows="10" cols="50">// Skriv din C++-kode her...</textarea><br>
+    <button onclick="runCode()">Kjør Kode</button>
+    <pre id="output"></pre>
+
+    <script>
+        function runCode() {
+            const code = document.getElementById('code').value;
+            fetch('/run', {
+                method: 'POST',
+                body: code,
+                headers: { 'Content-Type': 'text/plain' }
+            })
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('output').innerText = data;
+            }).catch(error => {
+                console.error('Error:', error);
+                document.getElementById('output').innerText = 'Feil ved kjøring av kode.';
+            });
+        }
+    </script>
+</body>
+</html>
